@@ -24,19 +24,20 @@ export default async function RootLayout({ children }: Props) {
 /*
 /
 
-<RootLayout>
-  <RootTemplate>
-    <RootSuspense fallback={<Loading />}>
-      <RootPage />
-    </RootSuspense>
-  </RootTemplate>
-</RootLayout>
+<GlobalErrorBoundary>
+  <RootLayout>
+    <RootTemplate>
+      <RootErrorBoundary fallback={<Error />}>
+        <RootSuspense fallback={<Loading />}>
+          <RootPage />
 
 / -> /dashboard
 <RootLayout>
   <RootTemplate>
-    <RootSuspense fallback={<Loading />}>
-      <DashboardLayout>
-        <DashboardSuspense fallback={<Loading />}>
-          <DashboardPage />
+    <RootErrorBoundary fallback={<Error />}>
+      <RootSuspense fallback={<Loading />}>
+        <DashboardLayout>
+          <DashboardErrorBoundary fallback={<Error />}>
+            <DashboardSuspense fallback={<Loading />}>
+              <DashboardPage />
 */
