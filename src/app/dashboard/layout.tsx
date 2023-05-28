@@ -3,7 +3,7 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const res = await fetch("http://localhost:3001", {
+  const res = await fetch("http://localhost:3001/users/1", {
     next: { revalidate: 60 },
   });
   const firstName = (await res.json()).name;

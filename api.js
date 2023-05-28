@@ -8,14 +8,15 @@ const users = [
 ];
 
 app.get("/users", function (req, res) {
-  console.log('Getting All Users');
+  console.log("Getting All Users");
   res.json(users);
 });
 
 app.get("/users/:id", function (req, res) {
-  const id = req.params.id
+  const id = req.params.id;
   console.log(`Getting User ${id}`);
-  res.json(users[id]);
+  if (users[id]) return res.json(users[id]);
+  return res.status(404).send("Not Found");
 });
 
 const posts = [
@@ -48,9 +49,10 @@ app.get("/posts", function (req, res) {
 });
 
 app.get("/posts/:id", function (req, res) {
-  const id = req.params.id
+  const id = req.params.id;
   console.log(`Getting Post ${id}`);
-  res.json(posts[id]);
+  if (posts[id]) return res.json(posts[id]);
+  return res.status(404).send("Not Found");
 });
 
 app.listen(3001, () => {
