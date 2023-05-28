@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { User } from '../app/User';
 
 export const Header = ({ username }: { username: string }) => {
   const [count, setCount] = useState(0);
@@ -10,7 +9,6 @@ export const Header = ({ username }: { username: string }) => {
 
   return (
     <div>
-      <User />
       <h1 className="text-xl font-bold my-5 mx-10">Hello {username}</h1>
       <button className="border border-red-400 mx-10" onClick={inc}>
         Clicked {count}
