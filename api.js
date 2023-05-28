@@ -7,6 +7,11 @@ const users = [
   { id: 3, name: "Hamid" },
 ];
 
+app.use(async (req, res, next) => {
+  const time = Math.random() * 5000;
+  setTimeout(() => next(), time);
+});
+
 app.get("/users", function (req, res) {
   console.log("Getting All Users");
   res.json(users);
