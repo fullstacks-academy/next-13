@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const Post = ({
   description,
   title,
@@ -17,7 +15,7 @@ const Post = ({
 
 export default async function Posts() {
   const postRes = await fetch("http://localhost:3001/posts/", {
-    cache: "no-cache",
+    next: { tags: ["posts", "users"] },
   });
   const posts = await postRes.json();
 

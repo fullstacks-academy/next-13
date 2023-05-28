@@ -46,6 +46,13 @@ const posts = [
     author: users[2].name,
     image: "https://example.com/images/post5.jpg",
   },
+  {
+    title: "Post 4",
+    description:
+      "Discover the transformative benefits of meditation for a calm and balanced life.",
+    author: users[2].name,
+    image: "https://example.com/images/post5.jpg",
+  }
 ];
 
 app.get("/posts", function (req, res) {

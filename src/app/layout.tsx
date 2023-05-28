@@ -1,6 +1,4 @@
-import { Header } from "@/components/Header";
 import "./globals.css";
-import { Suspense } from "react";
 
 type Props = {
   children: React.ReactNode;
