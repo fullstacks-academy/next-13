@@ -3,7 +3,15 @@ import Posts from "./Posts";
 import { User, preloadUser } from "./User";
 import Users from "./Users";
 
-export default async function Home() {
+export default async function Home({
+  params,
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  console.log(searchParams);
+
   return (
     <div>
       <h1>Hello From Next 13</h1>

@@ -1,3 +1,4 @@
+import styles from "./Post.module.css";
 const Post = ({
   description,
   title,
@@ -6,7 +7,9 @@ const Post = ({
   title: string;
 }) => {
   return (
-    <div className="flex flex-col my-10 border border-blue-400 p-20">
+    <div
+      className={`flex flex-col my-10 border border-blue-400 p-20 ${styles.dashboard}`}
+    >
       <div className="text-lg font-bold">{title}</div>
       <div>{description}</div>
     </div>
